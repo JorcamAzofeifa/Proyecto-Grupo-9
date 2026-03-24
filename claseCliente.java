@@ -1,42 +1,29 @@
 import javax.swing.JOptionPane;
 
-public class Cliente {
-    private int idCliente;
-    private String nombre;
-    private String telefono;
+public class MenuClientes {
 
-    public Cliente(int idCliente, String nombre, String telefono) {
-        this.idCliente = idCliente;
-        this.nombre = nombre;
-        this.telefono = telefono;
-    }
+    public static void menuClientes() {
+        int opcion;
 
-    public int getIdCliente() {
-        return idCliente;
-    }
+        do {
+            String menu = "=== MENÚ CLIENTES ===\n"
+                    + "1. Registrar cliente\n"
+                    + "2. Listar clientes\n"
+                    + "3. Volver\n\n"
+                    + "Seleccione una opción:";
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
-    }
+            opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
 
-    public String getNombre() {
-        return nombre;
-    }
+            if (opcion == 1) {
+                JOptionPane.showMessageDialog(null, "Función registrarCliente");
+            } else if (opcion == 2) {
+                JOptionPane.showMessageDialog(null, "Función listarClientes");
+            } else if (opcion == 3) {
+                JOptionPane.showMessageDialog(null, "Volviendo...");
+            } else {
+                JOptionPane.showMessageDialog(null, "Opción inválida.");
+            }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public void mostrarInfo() {
-        String info = "ID: " + idCliente + "\nNombre: " + nombre + "\nTelefono: " + telefono;
-        JOptionPane.showMessageDialog(null, info, "Informacion del Cliente", JOptionPane.INFORMATION_MESSAGE);
+        } while (opcion != 3);
     }
 }
