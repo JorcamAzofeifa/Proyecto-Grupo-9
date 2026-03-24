@@ -1,30 +1,32 @@
 import javax.swing.JOptionPane;
 
-public class Reserva {
-    private int idReserva;
-    private int idCliente;
-    private int idClase;
+public class MenuReservas {
 
-    public Reserva(int idReserva, int idCliente, int idClase) {
-        this.idReserva = idReserva;
-        this.idCliente = idCliente;
-        this.idClase = idClase;
-    }
+    public static void menuReservas() {
+        int opcion;
 
-    public int getIdReserva() {
-        return idReserva;
-    }
+        do {
+            String menu = "=== MENÚ RESERVAS ===\n"
+                    + "1. Realizar reserva\n"
+                    + "2. Cancelar reserva\n"
+                    + "3. Listar reservas\n"
+                    + "4. Volver\n\n"
+                    + "Seleccione una opción:";
 
-    public int getIdCliente() {
-        return idCliente;
-    }
+            opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
 
-    public int getIdClase() {
-        return idClase;
-    }
+            if (opcion == 1) {
+                JOptionPane.showMessageDialog(null, "Función realizarReserva");
+            } else if (opcion == 2) {
+                JOptionPane.showMessageDialog(null, "Función cancelarReserva");
+            } else if (opcion == 3) {
+                JOptionPane.showMessageDialog(null, "Función listarReservas");
+            } else if (opcion == 4) {
+                JOptionPane.showMessageDialog(null, "Volviendo...");
+            } else {
+                JOptionPane.showMessageDialog(null, "Opción inválida.");
+            }
 
-    public void mostrarDetalle() {
-        String info = "ID Reserva: " + idReserva + "\nID Cliente: " + idCliente + "\nID Clase: " + idClase;
-        JOptionPane.showMessageDialog(null, info, "Detalle de la Reserva", JOptionPane.INFORMATION_MESSAGE);
+        } while (opcion != 4);
     }
 }
