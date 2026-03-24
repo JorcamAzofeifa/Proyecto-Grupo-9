@@ -1,51 +1,29 @@
 import javax.swing.JOptionPane;
 
-public class ClaseGym {
-    private int idClase;
-    private String nombreClase;
-    private String horario;
-    private int cupoMaximo;
-    private int cupoDisponible;
+public class MenuClases {
 
-    public ClaseGym(int idClase, String nombreClase, String horario, int cupoMaximo) {
-        this.idClase = idClase;
-        this.nombreClase = nombreClase;
-        this.horario = horario;
-        this.cupoMaximo = cupoMaximo;
-        this.cupoDisponible = cupoMaximo; 
-    }
+    public static void menuClases() {
+        int opcion;
 
-    public int getIdClase() {
-        return idClase;
-    }
+        do {
+            String menu = "=== MENÚ CLASES ===\n"
+                    + "1. Crear clase\n"
+                    + "2. Listar clases\n"
+                    + "3. Volver\n\n"
+                    + "Seleccione una opción:";
 
-    public String getNombreClase() {
-        return nombreClase;
-    }
+            opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
 
-    public String getHorario() {
-        return horario;
-    }
+            if (opcion == 1) {
+                JOptionPane.showMessageDialog(null, "Función crearClase");
+            } else if (opcion == 2) {
+                JOptionPane.showMessageDialog(null, "Función listarClases");
+            } else if (opcion == 3) {
+                JOptionPane.showMessageDialog(null, "Volviendo...");
+            } else {
+                JOptionPane.showMessageDialog(null, "Opción inválida.");
+            }
 
-    public int getCupoMaximo() {
-        return cupoMaximo;
-    }
-
-    public int getCupoDisponible() {
-        return cupoDisponible;
-    }
-
-    public void reservarCupo() {
-        if (cupoDisponible > 0) {
-            cupoDisponible--;
-        } else {
-            JOptionPane.showMessageDialog(null, "No hay cupos disponibles para esta clase", "Clase Llena", JOptionPane.WARNING_MESSAGE);
-        }
-    }
-
-    public void cancelarCupo() {
-        if (cupoDisponible < cupoMaximo) {
-            cupoDisponible++;
-        }
+        } while (opcion != 3);
     }
 }
