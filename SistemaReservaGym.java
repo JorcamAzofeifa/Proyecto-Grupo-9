@@ -1,11 +1,9 @@
 public class SistemaReservasGym {
     
-    // Arreglos basicos con un tamaño maximo definido
     private static Cliente[] clientes = new Cliente[100];
     private static ClaseGym[] clases = new ClaseGym[100];
     private static Reserva[] reservas = new Reserva[100];
     
-    // Contadores para llevar el control de los espacios ocupados
     private static int cantidadClientes = 0;
     private static int cantidadClases = 0;
     private static int cantidadReservas = 0;
