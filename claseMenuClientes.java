@@ -1,3 +1,5 @@
+package com.mycompany.proyectogrupo9;
+
 import javax.swing.JOptionPane;
 
 public class MenuClientes {
